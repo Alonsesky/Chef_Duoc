@@ -24,8 +24,7 @@ const loadMenu = async() => {
                   <h5 class="card-title">$${precio}</h5>
               </div>
               <div class="card-footer">
-                  <a href="#" id="btn-agregar" class="btn btn-success btn-agregar">Solicitar plato</a>
-                  <div class="id-product" style="display:none;">${id}</div>
+                  <aid="btn-agregar-${id}" class="btn btn-success btn-agregar" onclick="agregarAPedido(${id})">Solicitar plato</a>
               </div>  
           </div>
         </div>`
@@ -78,8 +77,7 @@ const loadBebestible = async() => {
                   <h5 class="card-title">$${precio}</h5>
               </div>
               <div class="card-footer">
-                  <a href="#" id="btn-agregar" class="btn btn-success btn-agregar">Solicitar Bebestible</a>
-                  <div class="id-product" style="display:none;">${id}</div>
+                  <a id="btn-agregar-${id}" class="btn btn-success btn-agregar" onclick="agregarAPedido(${id})">Solicitar Bebestible</a>
               </div>  
           </div>
         </div>`
@@ -93,6 +91,8 @@ const loadBebestible = async() => {
         product.removeEventListener('click', clickAgregar);
         product.addEventListener('click', clickAgregar);
       });
+
+      
       
     }else if (respuesta.status===401) {
       console.log('La url API Invalida!');
@@ -103,6 +103,33 @@ const loadBebestible = async() => {
     }
   }catch(error){
     console.log(error);
+  }
+}
+
+
+
+
+function agregarAPedido(id){
+  $.getJSON('http://localhost:3000/products/'+id, function(data) {
+    console.log(data);
+    var id = data.id;
+    var name = data.name;
+    console.log(id, name);
+
+    comprobarStorage("pedido");
+
+    let pedido = JSON.parse(localStorage.getItem("pedido"));
+    pedido.push(data);
+    localStorage.setItem("pedido",JSON.stringify(pedido));
+    console.log(pedido);
+  });
+}
+
+function comprobarStorage(key){
+  let storage = localStorage.getItem(key);
+  if (storage==null) {
+    storage = [];
+    localStorage.setItem(key,JSON.stringify(storage));
   }
 }
 
