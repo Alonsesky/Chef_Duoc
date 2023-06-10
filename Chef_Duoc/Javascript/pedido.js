@@ -7,19 +7,7 @@ $("#btnPagar").on("click", function () {
   pedido = [];
   localStorage.setItem("pedido",JSON.stringify(pedido));
   cargarPedido();
-  enviarMensajeWhatsApp()
 });
-
-function enviarMensajeWhatsApp() {
-  var numeroTelefono = '56994134989';  // Número de teléfono al que se enviará el mensaje
-  var mensaje = '¡Hola!';  // Mensaje que se enviará
-  
-  // Crea la URL personalizada de WhatsApp
-  var url = 'https://wa.me/' + numeroTelefono + '?text=' + encodeURIComponent(mensaje);
-  
-  // Abre la URL en una nueva pestaña o ventana
-  window.open(url);
-}
 
 function cargarPedido(){
   $("#tableBody").empty();
