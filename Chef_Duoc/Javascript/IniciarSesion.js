@@ -6,6 +6,7 @@ $("#login").click(function() {
     $.getJSON('http://localhost:3000/users', function(data) {
       function verificarUsuario(ingreso_email, ingreso_password, productos) {
         for (let i = 0; i < productos.length; i++) {
+          localStorage.setItem('rol', productos[i].rol);
           if (productos[i].email === ingreso_email && productos[i].password === ingreso_password) {
             return true;
           }
@@ -17,7 +18,7 @@ $("#login").click(function() {
         localStorage.setItem('correo', ingreso_email);
         if (ingreso_email === 'admin@gmail.com' && ingreso_password === 'a@1a@1'){
           alert("Entro como Administrador");
-          window.location.href = "Administracion.html";
+          window.location.href = "administrador.html";
         }else{
           alert("Entro como "+ingreso_email);
           window.location.href = "index.html";

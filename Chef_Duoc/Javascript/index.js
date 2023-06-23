@@ -49,7 +49,7 @@ const loadMenu = async() => {
   }catch(error){
     console.log(error);
   }
-}
+};
 
 const loadBebestible = async() => {
   //VERIFICACION
@@ -104,10 +104,7 @@ const loadBebestible = async() => {
   }catch(error){
     console.log(error);
   }
-}
-
-
-
+};
 
 function agregarAPedido(id){
   $.getJSON('http://localhost:3000/products/'+id, function(data) {
@@ -123,7 +120,7 @@ function agregarAPedido(id){
     localStorage.setItem("pedido",JSON.stringify(pedido));
     console.log(pedido);
   });
-}
+};
 
 function comprobarStorage(key){
   let storage = localStorage.getItem(key);
@@ -131,7 +128,55 @@ function comprobarStorage(key){
     storage = [];
     localStorage.setItem(key,JSON.stringify(storage));
   }
-}
+};
+
+//OBTENER DIV DE LOS BOTONES
+var botoncerrarSesion = document.getElementById('btn-cerrar-sesion');
+var botoniniciarSesion = document.getElementById('btn-iniciar-sesion');
+var botonregistrarse = document.getElementById('btn-registrarse');
+var botonadministracion = document.getElementById('btn-administracion');
+var botonperfil = document.getElementById('btn-perfil');
+var botonpedidos = document.getElementById('btn-pedidos');
+var labelCorreo = document.getElementById('labelCorreo');
+var correo = localStorage.getItem('correo');
+var rol = localStorage.getItem('rol');
+
+//FUNCION PARA CAMBIAR LOS BOTONES POR USUARIO
+function sesionUsuario(botoncerrarSesion, botoniniciarSesion, botonregistrarse, botonadministracion, botonpedidos, botonperfil, rol, correo, labelCorreo) {
+  if (correo == null) {
+    labelCorreo.textContent = correo;
+    botoncerrarSesion.style.display = 'none';
+    botoniniciarSesion.style.display = 'block';
+    botonregistrarse.style.display = 'block';
+    botonadministracion.style.display = 'none';
+    botonperfil.style.display = 'none';
+    botonpedidos.style.display = 'none';
+  } else {
+    labelCorreo.textContent = correo;
+    botoncerrarSesion.style.display = 'block';
+    botoniniciarSesion.style.display = 'none';
+    botonregistrarse.style.display = 'none';
+    botonperfil.style.display = 'block';
+    if (rol == "chef") {
+      botonadministracion.style.display = 'block';
+      botonpedidos.style.display = 'none';
+    }else if (rol == "comensal") {
+      botonadministracion.style.display = 'none';
+      botonpedidos.style.display = 'block';
+    }else if (rol == "admin") {
+      botonadministracion.style.display = 'block';
+      botonpedidos.style.display = 'block';
+    }else{
+      botonadministracion.style.display = 'none';
+      botonpedidos.style.display = 'none';
+    }
+  };
+};
+
+botoncerrarSesion.addEventListener('click', function() {
+  localStorage.removeItem('correo');
+});
 
 loadMenu();
 loadBebestible();
+sesionUsuario(botoncerrarSesion, botoniniciarSesion, botonregistrarse, botonadministracion, botonpedidos, botonperfil, rol, correo, labelCorreo);
