@@ -1,0 +1,13 @@
+.body-container{
+  background-color: #a2d0f1;
+}
+
+.bg-azul {
+  --bs-bg-opacity: 1;
+  background-color: #1068a8!important;
+}
+
+.bg-celeste {
+  --bs-bg-opacity: 1;
+  background-color: #a2d0f1!important;
+}
