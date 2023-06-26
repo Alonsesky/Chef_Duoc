@@ -108,7 +108,7 @@ $(document).ready(function() {
 
     //FUNCIÓN COMPROBAR ROL
     function comprobar_codigo (categoria, codigo){
-      if (categoria==="cliente") {
+      if (categoria==="comensal") {
         return false;
       };
       if (categoria==="chef") {
@@ -119,7 +119,7 @@ $(document).ready(function() {
           return true;
         }
       };
-      if (categoria==="comensal") {
+      if (categoria==="mesero") {
         if (codigo === "5sscHWnn" || codigo === "yyseGSKW" || codigo === "aANyLtQw"){
           return false;
         }else{

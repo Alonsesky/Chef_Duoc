@@ -139,10 +139,10 @@
   ],
   "users": [
     {
-      "name": "brayan",
-      "email": "karathril@gmail.com",
+      "name": "comensal",
+      "email": "comensal@gmail.com",
       "password": "a@2a@2",
-      "rol": "cliente",
+      "rol": "comensal",
       "categoryId": 5,
       "id": 1
     },
@@ -155,10 +155,10 @@
       "id": 2
     },
     {
-      "name": "comensal",
-      "email": "comensal@gmail.com",
+      "name": "mesero",
+      "email": "mesero@gmail.com",
       "password": "a@2a@2",
-      "rol": "comensal",
+      "rol": "mesero",
       "categoryId": 5,
       "id": 3
     },

@@ -160,7 +160,7 @@ function sesionUsuario(botoncerrarSesion, botoniniciarSesion, botonregistrarse, 
     if (rol == "chef") {
       botonadministracion.style.display = 'block';
       botonpedidos.style.display = 'none';
-    }else if (rol == "comensal") {
+    }else if (rol == "mesero") {
       botonadministracion.style.display = 'none';
       botonpedidos.style.display = 'block';
     }else if (rol == "admin") {
