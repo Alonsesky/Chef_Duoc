@@ -169,6 +169,14 @@
       "rol": "chef",
       "categoryId": 5,
       "id": 3
+    },
+    {
+      "name": "aaa",
+      "email": "a@gmail.com",
+      "password": "a@1a@1",
+      "rol": "chef",
+      "categoryId": 5,
+      "id": 4
     }
   ]
 }
