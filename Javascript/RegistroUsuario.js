@@ -129,7 +129,7 @@ $(document).ready(function() {
       };
 
       /*  codigos de Chef  "3bbPFnkC" "saKY9oKi" "MouEfEcr"
-          codigos de comensal  "5sscHWnn" "yyseGSKW" "aANyLtQw"
+          codigos de Mesero  "5sscHWnn" "yyseGSKW" "aANyLtQw"
       */
 
     };

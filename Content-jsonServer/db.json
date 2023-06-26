@@ -169,6 +169,14 @@
       "rol": "chef",
       "categoryId": 5,
       "id": 3
+    },
+    {
+      "name": "juanito",
+      "email": "juanito@gmail.com",
+      "password": "a@2a@2",
+      "rol": "chef",
+      "categoryId": 5,
+      "id": 4
     }
   ]
 }
