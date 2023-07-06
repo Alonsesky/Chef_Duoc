@@ -177,6 +177,30 @@
       "rol": "chef",
       "categoryId": 5,
       "id": 4
+    },
+    {
+      "name": "suchef",
+      "email": "suchef@gmail.com",
+      "password": "a@2a@2",
+      "rol": "suchef",
+      "categoryId": 5,
+      "id": 5
+    },
+    {
+      "name": "repartidor",
+      "email": "repartidor@gmail.com",
+      "password": "a@2a@2",
+      "rol": "repartidor",
+      "categoryId": 5,
+      "id": 6
+    },
+    {
+      "name": "jefelocal",
+      "email": "jefelocal@gmail.com",
+      "password": "a@2a@2",
+      "rol": "jefelocal",
+      "categoryId": 5,
+      "id": 7
     }
   ]
 }

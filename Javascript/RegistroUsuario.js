@@ -119,17 +119,45 @@ $(document).ready(function() {
           return true;
         }
       };
+      if (categoria==="suchef") {
+        if (codigo === "g43Geg3r" || codigo === "DFdfg34f" || codigo === "SDF3sdfg4"){
+          return false;
+        }else{
+          alert("Código de Suchef incorrecto");
+          return true;
+        }
+      };
       if (categoria==="mesero") {
         if (codigo === "5sscHWnn" || codigo === "yyseGSKW" || codigo === "aANyLtQw"){
           return false;
         }else{
-          alert("Código de Comensal incorrecto");
+          alert("Código de Mesero incorrecto");
+          return true;
+        }
+      };
+      if (categoria==="repartidor") {
+        if (codigo === "2rWER43r" || codigo === "yyuiIY68i" || codigo === "tjf65TYY"){
+          return false;
+        }else{
+          alert("Código de Repartido incorrecto");
+          return true;
+        }
+      };
+      if (categoria==="jefelocal") {
+        if (codigo === "gsdfg34" || codigo === "SDFGe3gd" || codigo === "ds3g4SDF"){
+          return false;
+        }else{
+          alert("Código de Jefe Local incorrecto");
           return true;
         }
       };
 
-      /*  codigos de Chef  "3bbPFnkC" "saKY9oKi" "MouEfEcr"
+      /*  
+          codigos de Chef  "3bbPFnkC" "saKY9oKi" "MouEfEcr"
+          codigos de SuChef "g43Geg3r" "DFdfg34f" "SDF3sdfg4"
           codigos de Mesero  "5sscHWnn" "yyseGSKW" "aANyLtQw"
+          codigos de Repartidor "2rWER43r" "yyuiIY68i" "tjf65TYY"
+          codigos de Jefe Local "gsdfg34" "SDFGe3gd" "ds3g4SDF"
       */
 
     };
