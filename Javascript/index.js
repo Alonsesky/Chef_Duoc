@@ -108,17 +108,62 @@ const loadBebestible = async() => {
 
 function agregarAPedido(id){
   $.getJSON('http://localhost:3000/products/'+id, function(data) {
-    console.log(data);
-    var id = data.id;
-    var name = data.name;
-    console.log(id, name);
-
-    comprobarStorage("pedido");
-
-    let pedido = JSON.parse(localStorage.getItem("pedido"));
-    pedido.push(data);
-    localStorage.setItem("pedido",JSON.stringify(pedido));
-    console.log(pedido);
+    // console.log(data);
+    const selectElement = document.getElementById('selectorMesa');
+    const valorSeleccionado = selectElement.value;
+    if (valorSeleccionado==1){
+      comprobarStorage("pedido_mesa1");
+      let pedido = JSON.parse(localStorage.getItem("pedido_mesa1"));
+      if (pedido.length==0){
+        let estado = {estado :"pedido"};
+        let productos = [data];
+        let inicializar_pedido = [{estado:estado.estado},{productos:productos}];
+        pedido=inicializar_pedido;
+        localStorage.setItem("pedido_mesa1",JSON.stringify(pedido));
+      }else{
+        pedido[1].productos.push(data);
+        localStorage.setItem("pedido_mesa1",JSON.stringify(pedido));
+      }
+    } else if (valorSeleccionado==2){
+      comprobarStorage("pedido_mesa2");
+      let pedido = JSON.parse(localStorage.getItem("pedido_mesa2"));
+      if (pedido.length==0){
+        let estado = {estado :"pedido"};
+        let productos = [data];
+        let inicializar_pedido = [{estado:estado.estado},{productos:productos}];
+        pedido=inicializar_pedido;
+        localStorage.setItem("pedido_mesa2",JSON.stringify(pedido));
+      }else{
+        pedido[1].productos.push(data);
+        localStorage.setItem("pedido_mesa2",JSON.stringify(pedido));
+      }
+    } else if (valorSeleccionado==3){
+      comprobarStorage("pedido_mesa3");
+      let pedido = JSON.parse(localStorage.getItem("pedido_mesa3"));
+      if (pedido.length==0){
+        let estado = {estado :"pedido"};
+        let productos = [data];
+        let inicializar_pedido = [{estado:estado.estado},{productos:productos}];
+        pedido=inicializar_pedido;
+        localStorage.setItem("pedido_mesa3",JSON.stringify(pedido));
+      }else{
+        pedido[1].productos.push(data);
+        localStorage.setItem("pedido_mesa3",JSON.stringify(pedido));
+      }
+    }else if (valorSeleccionado==4){
+      comprobarStorage("pedido_mesa4");
+      let pedido = JSON.parse(localStorage.getItem("pedido_mesa4"));
+      if (pedido.length==0){
+        let estado = {estado :"pedido"};
+        let productos = [data];
+        let inicializar_pedido = [{estado:estado.estado},{productos:productos}];
+        pedido=inicializar_pedido;
+        localStorage.setItem("pedido_mesa4",JSON.stringify(pedido));
+      }else{
+        pedido[1].productos.push(data);
+        localStorage.setItem("pedido_mesa4",JSON.stringify(pedido));
+      }
+    }
   });
 };
 
