@@ -23,6 +23,17 @@
 }
 
 /*BTN-HAMBURGUESA*/
+.btn{
+  background-color: #013f6b;
+  border-color: #097cce;
+  color: #fff;
+  }
+
+.btn:hover {
+  background-color: #0560a1 ;
+  border-color: #013f6b;
+  color: #fff;
+}
 
 .btn-primary {
   display: flex;

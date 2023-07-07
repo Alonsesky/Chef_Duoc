@@ -160,8 +160,17 @@ function sesionUsuario(botoncerrarSesion, botoniniciarSesion, botonregistrarse, 
     if (rol == "chef") {
       botonadministracion.style.display = 'block';
       botonpedidos.style.display = 'none';
-    }else if (rol == "comensal") {
+    }else if (rol == "suchef") {
+      botonadministracion.style.display = 'block';
+      botonpedidos.style.display = 'none';
+    }else if (rol == "mesero") {
       botonadministracion.style.display = 'none';
+      botonpedidos.style.display = 'block';
+    }else if (rol == "repartidor") {
+      botonadministracion.style.display = 'none';
+      botonpedidos.style.display = 'block';
+    }else if (rol == "jefelocal") {
+      botonadministracion.style.display = 'block';
       botonpedidos.style.display = 'block';
     }else if (rol == "admin") {
       botonadministracion.style.display = 'block';
