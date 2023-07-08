@@ -4,14 +4,13 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Administración</title>
+  <title>Pedidos</title>
   <!--Enlaces-->
   <!--Bootstrap-->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" 
   integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
   <!--CSS-->
-  <link rel="stylesheet" href="CSS/style_index.css">
-  <link rel="stylesheet" href="CSS/style_administracion.css">
+  <link rel="stylesheet" href="CSS/style_mesas.css">
   <!--Font Family-->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,7 +26,7 @@
         </button>
       </div>
       <div class="mx-auto">
-        <h2 class="title-principal">ADMINISTRACIÓN</h2>
+        <h2 class="title-principal">MESAS</h2>
       </div>
       <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
       <div class="offcanvas-header">
@@ -60,61 +59,101 @@
     </div>
   </nav>
   <main class="container-main">
-  <!--CONTENIDO PRINCIPAL-->
-  <!-- Agregar producto -->
-  <div class="card m-4">
-    <div class="card-header text-center" style="color: #0560a1;">
-      <h4>Agregar Menu</h4>
-    </div>
-    <div class="card-body">
-      <div class="row">
-        <div class="col-4">
-          <input class=" form-control" placeholder="Nombre" id="agregar-producto-nombre" style="color: #013f6b;">
-        </div>
-        <div class="col-4">
-          <input class=" form-control" placeholder="Precio" id="agregar-producto-precio" style="color: #013f6b;">
-        </div>
-        <div class="col-4">
-          <select class="form-select" id="agregar-producto-opcion" style="color: #013f6b">
-            <option value="1">Menu</option>
-            <option value="2">Bebestible</option>
-          </select>
-        </div>
-    </div>
-    <div class="row justify-content-center">
-      <div class="col-5 mt-3">
-        <textarea class="form-control" style="color: #013f6b" rows="3" id="agregar-producto-descripcion" placeholder="Descripcion"></textarea>
-      </div>
-    </div>
-    </div>
-    <div class="card-footer">
-      <div class="row text-center">
-        <div class="col-12">
-          <button type="button" id="btn-agregarMenu" class="btn btn-danger btn-lg">Agregar Menu</button>
+    
+    <!-- FILA MESA 1 Y 2 -->
+    <div class="row d-flex justify-content-center">
+      <!-- MESA 1 -->
+      <div class="col-6 d-flex justify-content-center">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">Mesa 1</h5>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Plato</th>
+                  <th scope="col">Precio</th>
+                </tr>
+              </thead>
+              <tbody id="tabla_mesa1">
+              </tbody>
+            </table>
+            <a id="btnMesa1" href="#" class="btnPago btn btn-primary"></a>
+          </div>
         </div>
       </div>
+      <!-- /MESA1 -->
+      <!-- MESA 2 -->
+      <div class="col-6 d-flex justify-content-center">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">Mesa 2</h5>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Plato</th>
+                  <th scope="col">Precio</th>
+                </tr>
+              </thead>
+              <tbody id="tabla_mesa2">
+            </table>
+            <a id="btnMesa2" href="#" class="btnPago btn btn-primary"></a>
+          </div>
+        </div>
+      </div>
+      <!-- /MESA2 -->
     </div>
-  </div>
-<!--listado del producto-->
-<div class="table-container m-4">
-  <table>
-    <tr>
-      <th>Nombre</th>
-      <th>Precio</th>
-      <th>Categoria</th>
-      <th>Descripcion</th>
-      <th>Actualizar</th>
-      <th>Eliminar</th>
-    </tr>
-    <tbody id="info-table"></tbody>
-  </table>
-</div>
+    <!-- /FILA MESA 1 Y 2 -->
+
+    <!-- FILA MESA 3 Y 4 -->
+    <div class="row d-flex justify-content-center mt-5">
+      <!-- MESA 1 -->
+      <div class="col-6 d-flex justify-content-center">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">Mesa 3</h5>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Plato</th>
+                  <th scope="col">Precio</th>
+                </tr>
+              </thead>
+              <tbody id="tabla_mesa3">
+              </tbody>
+            </table>
+            <a id="btnMesa3" href="#" class="btnPago btn btn-primary"></a>
+          </div>
+        </div>
+      </div>
+      <!-- /MESA1 -->
+      <!-- MESA 2 -->
+      <div class="col-6 d-flex justify-content-center">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">Mesa 4</h5>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Plato</th>
+                  <th scope="col">Precio</th>
+                </tr>
+              </thead>
+              <tbody id="tabla_mesa4">
+            </table>
+            <a id="btnMesa4" href="#" class="btnPago btn btn-primary"></a>
+          </div>
+        </div>
+      </div>
+      <!-- /MESA2 -->
+    </div>
+    <!-- /FILA MESA 3 Y 4 -->
+    
   </main>
   <!--Enlaces-->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <!-- Scrip Bootstrap -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
   <script src="Javascript/index.js"></script>
-  <script src="Javascript/administrador.js"></script>
+  <script src="Javascript/mesas.js"></script>
 </body>
 </html>

@@ -139,10 +139,10 @@
   ],
   "users": [
     {
-      "name": "brayan",
-      "email": "karathril@gmail.com",
+      "name": "comensal",
+      "email": "comensal@gmail.com",
       "password": "a@2a@2",
-      "rol": "cliente",
+      "rol": "comensal",
       "categoryId": 5,
       "id": 1
     },
@@ -155,10 +155,10 @@
       "id": 2
     },
     {
-      "name": "comensal",
-      "email": "comensal@gmail.com",
+      "name": "mesero",
+      "email": "mesero@gmail.com",
       "password": "a@2a@2",
-      "rol": "comensal",
+      "rol": "mesero",
       "categoryId": 5,
       "id": 3
     },
@@ -169,6 +169,38 @@
       "rol": "chef",
       "categoryId": 5,
       "id": 3
+    },
+    {
+      "name": "juanito",
+      "email": "juanito@gmail.com",
+      "password": "a@2a@2",
+      "rol": "chef",
+      "categoryId": 5,
+      "id": 4
+    },
+    {
+      "name": "suchef",
+      "email": "suchef@gmail.com",
+      "password": "a@2a@2",
+      "rol": "suchef",
+      "categoryId": 5,
+      "id": 5
+    },
+    {
+      "name": "repartidor",
+      "email": "repartidor@gmail.com",
+      "password": "a@2a@2",
+      "rol": "repartidor",
+      "categoryId": 5,
+      "id": 6
+    },
+    {
+      "name": "jefelocal",
+      "email": "jefelocal@gmail.com",
+      "password": "a@2a@2",
+      "rol": "jefelocal",
+      "categoryId": 5,
+      "id": 7
     }
   ]
 }
