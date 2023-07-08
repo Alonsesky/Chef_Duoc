@@ -1,0 +1,93 @@
+/*BARRA DE NAVEGACION*/
+.nav-content{
+  background-color: #1068a8; 
+}
+
+.offcanvas{
+  background-color: #1068a8;
+}
+
+.navbar{
+  height: 80px;
+  display: flex;
+}
+
+.title-principal{
+  color: #fff;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 50px;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  margin-top: 4px;
+}
+
+/*BTN-HAMBURGUESA*/
+.btn{
+  background-color: #013f6b;
+  border-color: #097cce;
+  color: #fff;
+}
+
+.btn:hover {
+  background-color: #0560a1 ;
+  border-color: #013f6b;
+  color: #fff;
+}
+
+.btn-primary {
+  display: flex;
+  background-color: #013f6b;
+  height: 4rem;
+  font-size: 24px;
+  justify-content: center;
+  align-items: center;
+}
+
+/*BODY*/
+.nav-cerrarSesion{
+  list-style-type: none;
+  padding-top: 20rem;
+}
+
+.body-container{
+  background-color: #a2d0f1;
+}
+
+/*MAIN*/
+
+.container-main{
+  padding-top: 6rem;
+}
+
+.card-body{
+  position: relative;
+  background-color: #a2d0f1;
+}
+.card{
+  transition: box-shadow 0.3s ease;
+}
+
+
+.card:hover {
+  box-shadow: 0.3rem 0.3rem 0.5rem 0 rgba(0, 0, 0, 0.547),
+              -0.3rem -0.3rem 0.5rem 0 rgba(0, 0, 0, 0.547)
+}
+
+.bg-azul {
+  --bs-bg-opacity: 1;
+  background-color: #1068a8!important;
+}
+
+.bg-celeste {
+  --bs-bg-opacity: 1;
+  background-color: #a2d0f1!important;
+}
+
+.table>:not(caption)>*>* {
+  padding: 0.5rem 0.5rem;
+  color: var(--bs-table-color-state,var(--bs-table-color-type,var(--bs-table-color)));
+  background-color: #a2d0f1;
+  border-bottom-width: var(--bs-border-width);
+  box-shadow: inset 0 0 0 9999px var(--bs-table-bg-state,var(--bs-table-bg-type,var(--bs-table-accent-bg)));
+}
