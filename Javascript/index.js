@@ -14,21 +14,52 @@ const loadMenu = async() => {
         const description = producto.description;
         const id = producto.id;
         const precio = (producto.price).toLocaleString('es-CL');
-        cartas +=  `
-        <div class="col-12 col-md-3 col-sm-6 col-lg-3 mb-4">
-          <div class="card">
-            <img src="${image}" id="card-img" alt="...">
-              <div class="card-body">
-                  <h4 class="card-title">${title}</h4><br>
-                  <p class="card-text">${description}</p>
-                  <h5 class="card-title">$${precio}</h5>
-              </div>
-              <div class="card-footer">
-                  <aid="btn-agregar-${id}" class="btn btn-success btn-agregar" onclick="agregarAPedido(${id})">Solicitar plato</a>
-              </div>  
-          </div>
-        </div>`
-        ;
+        if (correo == null) {
+          cartas +=  
+          `
+          <div class="col-12 col-md-3 col-sm-6 col-lg-3 mb-4">
+            <div class="card">
+              <img src="${image}" id="card-img" alt="...">
+                <div class="card-body">
+                    <h4 class="card-title">${title}</h4><br>
+                    <p class="card-text">${description}</p>
+                    <h5 class="card-title">$${precio}</h5>
+                    </div> 
+            </div>
+          </div>`
+          ;
+        } else if (rol == "jefelocal" || rol == "repartidor" || rol == "mesero" || rol == "admin") {
+          cartas +=  
+          `
+          <div class="col-12 col-md-3 col-sm-6 col-lg-3 mb-4">
+            <div class="card">
+              <img src="${image}" id="card-img" alt="...">
+                <div class="card-body">
+                    <h4 class="card-title">${title}</h4><br>
+                    <p class="card-text">${description}</p>
+                    <h5 class="card-title">$${precio}</h5>
+                    </div>
+                <div class="card-footer" id="boton-agregar-pedido">
+                    <a id="btn-agregar-${id}" class="btn btn-success btn-agregar" onclick="agregarAPedido(${id})">Solicitar plato</a>
+                </div>  
+            </div>
+          </div>`
+          ;
+        } else {
+          cartas +=  
+          `
+          <div class="col-12 col-md-3 col-sm-6 col-lg-3 mb-4">
+            <div class="card">
+              <img src="${image}" id="card-img" alt="...">
+                <div class="card-body">
+                    <h4 class="card-title">${title}</h4><br>
+                    <p class="card-text">${description}</p>
+                    <h5 class="card-title">$${precio}</h5>
+                    </div> 
+            </div>
+          </div>`
+          ;
+        }
       });
 
       $('#info-cards-all').html(cartas);
@@ -67,21 +98,49 @@ const loadBebestible = async() => {
         const description = producto.description;
         const id = producto.id;
         const precio = (producto.price).toLocaleString('es-CL');
-        cartas +=  `
-        <div class="col-12 col-md-3 col-sm-6 col-lg-3 mb-4">
-          <div class="card">
-            <img src="${image}" id="card-img" alt="...">
-              <div class="card-body">
-                  <h4 class="card-title">${title}</h4><br>
-                  <p class="card-text">${description}</p>
-                  <h5 class="card-title">$${precio}</h5>
-              </div>
-              <div class="card-footer">
-                  <a id="btn-agregar-${id}" class="btn btn-success btn-agregar" onclick="agregarAPedido(${id})">Solicitar Bebestible</a>
-              </div>  
-          </div>
-        </div>`
-        ;
+        if (correo == null) {
+          cartas +=  `
+          <div class="col-12 col-md-3 col-sm-6 col-lg-3 mb-4">
+            <div class="card">
+              <img src="${image}" id="card-img" alt="...">
+                <div class="card-body">
+                    <h4 class="card-title">${title}</h4><br>
+                    <p class="card-text">${description}</p>
+                    <h5 class="card-title">$${precio}</h5>
+                </div> 
+            </div>
+          </div>`
+          ;
+        } else if (rol == "jefelocal" || rol == "repartidor" || rol == "mesero" || rol == "admin") {
+          cartas +=  `
+          <div class="col-12 col-md-3 col-sm-6 col-lg-3 mb-4">
+            <div class="card">
+              <img src="${image}" id="card-img" alt="...">
+                <div class="card-body">
+                    <h4 class="card-title">${title}</h4><br>
+                    <p class="card-text">${description}</p>
+                    <h5 class="card-title">$${precio}</h5>
+                </div>
+                <div class="card-footer">
+                    <a id="btn-agregar-${id}" class="btn btn-success btn-agregar" onclick="agregarAPedido(${id})">Solicitar Bebestible</a>
+                </div>  
+            </div>
+          </div>`
+          ;
+        } else {
+          cartas +=  `
+          <div class="col-12 col-md-3 col-sm-6 col-lg-3 mb-4">
+            <div class="card">
+              <img src="${image}" id="card-img" alt="...">
+                <div class="card-body">
+                    <h4 class="card-title">${title}</h4><br>
+                    <p class="card-text">${description}</p>
+                    <h5 class="card-title">$${precio}</h5>
+                </div> 
+            </div>
+          </div>`
+          ;
+        }
       });
 
       $('#info-cards-bebestible').html(cartas);
@@ -176,6 +235,8 @@ function comprobarStorage(key){
 };
 
 //OBTENER DIV DE LOS BOTONES
+var botonMesas = document.getElementById('btn-mesas');
+var botonOpcionMesas = document.getElementById('selectorMesa');
 var botoncerrarSesion = document.getElementById('btn-cerrar-sesion');
 var botoniniciarSesion = document.getElementById('btn-iniciar-sesion');
 var botonregistrarse = document.getElementById('btn-registrarse');
@@ -196,33 +257,51 @@ function sesionUsuario(botoncerrarSesion, botoniniciarSesion, botonregistrarse, 
     botonadministracion.style.display = 'none';
     botonperfil.style.display = 'none';
     botonpedidos.style.display = 'none';
+    botonOpcionMesas.style.display = 'none';
+    botonMesas.style.display = 'none';
   } else {
     labelCorreo.textContent = correo;
     botoncerrarSesion.style.display = 'block';
     botoniniciarSesion.style.display = 'none';
     botonregistrarse.style.display = 'none';
     botonperfil.style.display = 'block';
+    botonOpcionMesas.style.display = 'none';
+    botonMesas.style.display = 'none';
     if (rol == "chef") {
       botonadministracion.style.display = 'block';
       botonpedidos.style.display = 'none';
+      botonOpcionMesas.style.display = 'none';
+    botonMesas.style.display = 'none';
     }else if (rol == "suchef") {
       botonadministracion.style.display = 'block';
       botonpedidos.style.display = 'none';
+      botonOpcionMesas.style.display = 'none';
+    botonMesas.style.display = 'none';
     }else if (rol == "mesero") {
       botonadministracion.style.display = 'none';
       botonpedidos.style.display = 'block';
+      botonOpcionMesas.style.display = 'block';
+      botonMesas.style.display = 'block';
     }else if (rol == "repartidor") {
       botonadministracion.style.display = 'none';
       botonpedidos.style.display = 'block';
+      botonOpcionMesas.style.display = 'block';
+    botonMesas.style.display = 'block';
     }else if (rol == "jefelocal") {
       botonadministracion.style.display = 'block';
       botonpedidos.style.display = 'block';
+      botonOpcionMesas.style.display = 'block';
+      botonMesas.style.display = 'block';
     }else if (rol == "admin") {
       botonadministracion.style.display = 'block';
       botonpedidos.style.display = 'block';
+      botonOpcionMesas.style.display = 'block';
+      botonMesas.style.display = 'block';
     }else{
       botonadministracion.style.display = 'none';
       botonpedidos.style.display = 'none';
+      botonOpcionMesas.style.display = 'none';
+      botonMesas.style.display = 'none';
     }
   };
 };
