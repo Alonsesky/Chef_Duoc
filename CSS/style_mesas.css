@@ -1,3 +1,7 @@
+#selectorMesa{
+  display: none !important;
+}
+
 /*BARRA DE NAVEGACION*/
 .nav-content{
   background-color: #1068a8; 

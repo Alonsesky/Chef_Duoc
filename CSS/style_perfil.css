@@ -1,3 +1,6 @@
+#selectorMesa{
+  display: none !important;
+}
 .body-container{
   background-color: #a2d0f1;
 }
